@@ -5,7 +5,16 @@ const multer = require('multer');
 const app = express();
 const port = 3000;
 const CartItem = require('./cartItem');
-
+ /*
+         * 'Dashboard' All System's for Discord Bot
+         *
+         * Author: Hubyp#2814 & 948916911293497344
+         * Copyright © 2023 Palma Team
+         *
+         * For more information or to report issues, please refer to the README.md and LICENSE files.
+         * You can also contact us at Hubyp#2814 & 948916911293497344.
+         *
+         **/ 
 mongoose.connect(process.env.MONG_OB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -78,7 +87,16 @@ app.post('/adauga', upload.single('productImage'), async (req, res) => {
   }
 
   const productImage = req.file.filename;
-
+ /*
+         * 'Dashboard' All System's for Discord Bot
+         *
+         * Author: Hubyp#2814 & 948916911293497344
+         * Copyright © 2023 Palma Team
+         *
+         * For more information or to report issues, please refer to the README.md and LICENSE files.
+         * You can also contact us at Hubyp#2814 & 948916911293497344.
+         *
+         **/ 
   const newProduct = new Product({
     name,
     description,
@@ -128,7 +146,16 @@ app.get('/admin', async (req, res) => {
     res.status(500).send('Eroare la afișarea paginii de administrare');
   }
 });
-
+ /*
+         * 'Dashboard' All System's for Discord Bot
+         *
+         * Author: Hubyp#2814 & 948916911293497344
+         * Copyright © 2023 Palma Team
+         *
+         * For more information or to report issues, please refer to the README.md and LICENSE files.
+         * You can also contact us at Hubyp#2814 & 948916911293497344.
+         *
+         **/ 
 app.post('/adauga-in-cos/:productId', async (req, res) => {
   const productId = req.params.productId;
   const quantity = parseInt(req.body.quantity);
@@ -182,3 +209,13 @@ app.post('/sterge-din-cos/:itemId', async (req, res) => {
 app.listen(port, () => {
   console.log(`Serverul rulează pe portul ${port}`);
 });
+ /*
+         * 'Dashboard' All System's for Discord Bot
+         *
+         * Author: Hubyp#2814 & 948916911293497344
+         * Copyright © 2023 Palma Team
+         *
+         * For more information or to report issues, please refer to the README.md and LICENSE files.
+         * You can also contact us at Hubyp#2814 & 948916911293497344.
+         *
+         **/ 
