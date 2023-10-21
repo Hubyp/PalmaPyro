@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista Produselor Pirotehnice</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8rIzy6og6mkqjYeDH93ACwqqaxi3DByKmOqKqF2P1KqrFtM"
+    crossorigin="anonymous"
+  >
+</head>
+<body>
+  <%- include("../partials/nav-bar") %>
+
+  <div class="container">
+   <h1 class="main-title">Lista Produselor Pirotehnice</h1>
+    <div class="products-container">
+      <% products.forEach(function(product) { %>
+        <div class="product-card">
+          <img src="/uploads/<%= product.image %>" alt="<%= product.name %>">
+          <div class="product-info">
+            <h2><%= product.name %></h2>
+            <p class="description"><%= product.description %></p>
+            <p>Preț: <%= product.price %> RON</p>
+              <label for="quantity">Cantitate:</label>
+              <input type="number" name="quantity" id="quantity" value="1" min="1">
+                    <a href="/adauga-in-cos/<%= product._id %>" class="buy-link">Adaugă în coș</a>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+  <script src="/script.js"></script>
+</body>
+</html>
