@@ -1,0 +1,30 @@
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <a > <!-- Adaugă un link către pagina de acasă sau logo-ul site-ului <img src="logo.png" alt="Logo"> -->
+       <h1>Palma</h1>
+      </a>
+    </div>
+    <ul class="pages">
+      <li><a href="/">Acasă</a></li>
+      <li><a href="/produse">Produse</a></li>
+    </ul>
+    <div class="cart">
+      <a href="/cos-cumparaturi"> <!-- Adăugăm un link pentru coșul de cumpărături -->
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<script>
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+</script>
