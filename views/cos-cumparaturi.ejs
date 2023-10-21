@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coș de cumpărături</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <%- include("../partials/nav-bar") %>
+
+  <div class="container">
+    <h1>Coș de cumpărături</h1>
+    <div class="cart-items">
+      <% cartItems.forEach(function(item) { %>
+        <div class="cart-item">
+          <h2><%= item.name %></h2>
+          <p>Cantitate: <%= item.quantity %></p>
+          <p>Preț: <%= item.price %> RON</p>
+          <button class="remove-button" data-itemid="<%= item._id %>">Șterge</button>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+  <script src="/script.js"></script>
+</body>
+</html>

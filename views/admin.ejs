@@ -1,0 +1,48 @@
+                                    <!DOCTYPE html>
+                                    <html>
+                                    <head>
+                                      <title>Pagina de Administrare</title>
+                                      <link rel="stylesheet" type="text/css" href="/style.css">
+                                    </head>
+                                    <body>
+                                      <!-- Nav Bar -->
+                                      <%- include("../partials/nav-bar") %>
+
+                                      <h1>Pagina de Administrare</h1>
+
+                                      <h1>Adaugă un produs nou</h1>
+                                      <form action="/adauga" method="post" enctype="multipart/form-data">
+                                        <label for="name">Nume:</label>
+                                        <input type="text" id="name" name="name" required>
+                                        <label for="description">Descriere:</label>
+                                        <textarea id="description" name="description" required></textarea>
+                                        <label for="price">Preț (RON):</label>
+                                        <input type="number" id="price" name="price" step="0.01" required>
+                                        <label for="productImage">Imagine Produs:</label>
+                                        <input type="file" id="productImage" name="productImage" accept="image/*">
+                                        <button type="submit">Adaugă Produs</button>
+                                      </form>
+
+                                      <h2>Produse existente:</h2>
+                                      <ul>
+                                        <% products.forEach(function(product) { %>
+                                          <li>
+                                            <h3><%= product.name %></h3>
+                                            <p><%= product.description %></p>
+                                            <p>Preț: <%= product.price %> RON</p>
+                                            <img src="/uploads/<%= product.image %>" alt="<%= product.name %>">
+                                            <p>ID: <%= product._id %></p>
+                                            <button class="edit-product-button" data-id="<%= product._id %>">Editează Produs</button>
+                                            <button class="delete-product-button" data-id="<%= product._id %>">Șterge Produs</button>
+                                          </li>
+                                        <% }); %>
+                                      </ul>
+
+                                      <h2>Istoric:</h2>
+                                      <ul id="history-list">
+                                        <!-- Aici vor apărea înregistrările din istoric -->
+                                      </ul>
+
+                                      <script src="/admin.js"></script>
+                                    </body>
+                                    </html>
