@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 const CartItem = require('./cartItem');
 
-mongoose.connect('mongodb+srv://neza4:uo-vs85e@cluster0.8i9vcnx.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONG_OB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
